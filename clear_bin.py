@@ -80,7 +80,7 @@ if __name__ == "__main__":
 
     obj_ids = env._objects_body_ids  # everything else will be treated as background
 
-    is_grasped = np.zeros(3).astype(np.bool)
+    is_grasped = np.zeros(3).astype(bool)
     while not np.all(is_grasped):  # Keep repeating until the tote is empty
         # Capture rgb and depth image of the tote.
         rgb_obs, depth_obs, _ = camera.make_obs(my_camera, view_matrix)

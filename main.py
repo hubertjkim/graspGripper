@@ -129,7 +129,7 @@ def get_grasp_position_angle(object_id):
 
 
 if __name__ == "__main__":
-    random.seed(1)
+    random.seed(1) # ???
     object_shapes = [
         "assets/objects/cube.urdf",
     ]
