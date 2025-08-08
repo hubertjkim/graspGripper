@@ -371,7 +371,7 @@ def get_tableau_palette():
             [118, 183, 178],  # cyan
             [186, 176, 172]  # gray
         ],
-        dtype=np.float
+        dtype=float
     )
     return palette / 255.
 
