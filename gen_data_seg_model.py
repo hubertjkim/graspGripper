@@ -68,7 +68,7 @@ if __name__ == "__main__":
         image.write_depth(depth_obs, depth_name)
 
         # process mask
-        indices_covered = np.zeros_like(mask_obs, dtype=np.bool)
+        indices_covered = np.zeros_like(mask_obs, dtype= bool)
         for obj_index, obj_id in enumerate(obj_ids):
             obj_pixel_indices = (mask_obs == obj_id)
             mask_obs[obj_pixel_indices] = obj_index + 1

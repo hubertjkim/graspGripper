@@ -1,0 +1,92 @@
+C:\Users\HubertKim\anaconda3\envs\graspGripper\python.exe D:\GitHub\graspGripper\train_seg_model.py
+pybullet build time: Jul  8 2024 22:28:10
+device: cpu
+Epoch ( 1 / 5 )
+[Epoch 1] Train loss & mIoU: 0.56 0.77
+Test loss & mIoU: 0.31 0.89
+---------------------------------
+checkpoint saved at epoch 1
+Epoch ( 2 / 5 )
+[Epoch 2] Train loss & mIoU: 0.15 0.97
+Test loss & mIoU: 0.08 0.98
+---------------------------------
+checkpoint saved at epoch 2
+Epoch ( 3 / 5 )
+[Epoch 3] Train loss & mIoU: 0.06 0.99
+Test loss & mIoU: 0.04 0.99
+---------------------------------
+checkpoint saved at epoch 3
+Epoch ( 4 / 5 )
+[Epoch 4] Train loss & mIoU: 0.03 0.99
+Test loss & mIoU: 0.02 0.99
+---------------------------------
+checkpoint saved at epoch 4
+Epoch ( 5 / 5 )
+[Epoch 5] Train loss & mIoU: 0.02 0.99
+Test loss & mIoU: 0.02 1.00
+---------------------------------
+checkpoint saved at epoch 5
+epoch, model_miou: 5 0.9952323363641529
+Saving predictions in directory ./dataset/test/
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+[0 1 2 3]
+
+Process finished with exit code 0
