@@ -129,6 +129,10 @@ def get_grasp_position_angle(object_id):
 
 
 if __name__ == "__main__":
+    # Unlike clear_bin.py, this module only tests the robot motion. (no sensing/perception/planning)
+    # The perception & planning section is purely replaced with the random combinations
+
+    # --[Prep]--
     random.seed(1)
     object_shapes = [
         "assets/objects/cube.urdf",
@@ -136,7 +140,7 @@ if __name__ == "__main__":
     env = sim.PyBulletSim(object_shapes = object_shapes)
     num_trials = 3
 
-    # PART 1: Basic robot movement
+    # PART 1: Without sensing, find good robot motion combinations from the random iterations
     # Implement env.move_tool function in sim.py. More details in env.move_tool description
     passed = 0
     for i in range(num_trials):
@@ -162,7 +166,7 @@ if __name__ == "__main__":
         del marker, link_marker
     print(f"[Robot Movement] {passed} / {num_trials} cases passed")
 
-    # PART 2: Grasping
+    # PART 2: Without sensing, find good grasping combinations from the random iterations.
     passed = 0
     env.load_gripper()
     for _ in range(num_trials):

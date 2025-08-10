@@ -19,6 +19,8 @@ from train_seg_model import RGBDataset
 
 
 if __name__ == "__main__":
+
+    # --[Prep]--
     random.seed(1)
     color_palette = train_seg_model.get_tableau_palette()
 
@@ -40,7 +42,7 @@ if __name__ == "__main__":
     # Predefined grasping transformation wrt each object, i.e.,
     #  when an object i loaded at basePosition [0,0,0] and baseOrientation [0,0,0]
     #  is attempted to grasp at corresponding object_grasp_positions[i] and 
-    #  object_grasp_angles[i], it will result in a successfull grasp.
+    #  object_grasp_angles[i], it will result in a successfully grasp.
     object_grasp_positions = [
         np.array([[0, 0, 0, 1]]).transpose(),
         np.array([[0, 0, 0, 1]]).transpose(),
@@ -80,6 +82,7 @@ if __name__ == "__main__":
 
     obj_ids = env._objects_body_ids  # everything else will be treated as background
 
+    # --[Execution]--
     is_grasped = np.zeros(3).astype(bool)
     while not np.all(is_grasped):  # Keep repeating until the tote is empty
         # Capture rgb and depth image of the tote.
@@ -136,8 +139,8 @@ if __name__ == "__main__":
         world_pts_sample = world_pts[np.random.choice(range(world_pts.shape[0]), num_sample_pts), :]
         # (optional) Uncomment following to visualize points as small red spheres.
         #   These should approximately lie on chosen object index
-        # for position in world_pts_sample:
-        #     markers.append(sim.SphereMarker(position=position, radius=0.001, rgba_color=[1, 0, 0, 0.8]))
+        for position in world_pts_sample:
+            markers.append(sim.SphereMarker(position=position, radius=0.001, rgba_color=[1, 0, 0, 0.8]))
 
         # # Sample points from ground truth mesh.
         # # Sample pts from known object mesh. Use object_meshes[obj_index]
@@ -161,8 +164,8 @@ if __name__ == "__main__":
 
         # (optional) Uncomment following to visualize transformed points as small black spheres.
         #   These should approximately lie on chosen object index
-        # for position in transformed:
-        #     markers.append(sim.SphereMarker(position=position, radius=0.001, rgba_color=[0, 0, 0, 0.8]))
+        for position in transformed:
+            markers.append(sim.SphereMarker(position=position, radius=0.001, rgba_color=[0, 0, 0, 0.8]))
 
         # transform pre-defined grasp position `obj_grasp_positions[obj_index]` from
         #   ground truth object frame to the segmented object frame. Also transform pre-defined
