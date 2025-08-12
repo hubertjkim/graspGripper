@@ -67,12 +67,14 @@ if __name__ == "__main__":
         image.write_rgb(rgb_obs.astype(np.uint8), rgb_name)
         image.write_depth(depth_obs, depth_name)
 
-        # process mask
+        # process mask (assign object to objec class index)-- object id based on the iterations of the obj_ids
         indices_covered = np.zeros_like(mask_obs, dtype= bool)
         for obj_index, obj_id in enumerate(obj_ids):
             obj_pixel_indices = (mask_obs == obj_id)
+            # This is the key labeling step:
             mask_obs[obj_pixel_indices] = obj_index + 1
             indices_covered |= obj_pixel_indices
+        # Label everything else as background (class 0)
         mask_obs[~indices_covered] = 0
         image.write_mask(mask_obs, mask_name)
         env.reset_objects()
